@@ -6,5 +6,6 @@ class binarytree{
         virtual void addBST(int)=0;
         virtual void searchBST(int)=0;
         virtual int removeBST(int)=0;
+        virtual void output()=0;
         ~ binarytree(){}
 };

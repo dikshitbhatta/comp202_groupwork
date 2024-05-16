@@ -3,7 +3,7 @@
 
 class arrayBST{
     private:
-        int * data;
+        int* data;
         int size;
         int index;
         int checker;
@@ -15,11 +15,11 @@ class arrayBST{
         void output();
         arrayBST(int size);
         ~arrayBST();  
-}
+};
 
 arrayBST::arrayBST(int size)
     :size(size),index(0),checker(0){
-        int *data = new int[];
+        int *data = new int[size];
     }
 
 arrayBST::~arrayBST(){
@@ -28,7 +28,7 @@ arrayBST::~arrayBST(){
 
 bool arrayBST::isEmpty(){
 
-    if(checker=0){
+    if(checker==0){
         return true;
     }
     else
@@ -50,7 +50,7 @@ int removeBST(int element){
             checker--;
     }
 }
-void arrayBST::outut(){
+void arrayBST::output(){
     if(isEmpty()){
         std::cout<<"Tree is empty."<<std::endl;
     }
@@ -58,13 +58,13 @@ void arrayBST::outut(){
     for(int i=0;i<size;i++){
         std::cout<<data[index]<<' ';
     }
-    std::cout<<endl;
+    std::cout<<std::endl;
     }
 
 }
 
 int main(){
-    binarytree *btree = new arrayBST(10)
+    binarytree *btree = new arrayBST(10);
     btree->addBST(10);
     btree->addBST(20);
     btree->output();
