@@ -1,5 +1,5 @@
 #include <iostream>
-#include <binarytree.h>
+#include "binarytree.h"
 
 class arrayBST{
     private:
@@ -64,7 +64,7 @@ void arrayBST::output(){
 }
 
 int main(){
-    binarytree *btree = new arrayBST(10);
+    binarytree* btree = new arrayBST(10);
     btree->addBST(10);
     btree->addBST(20);
     btree->output();
