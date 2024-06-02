@@ -32,6 +32,6 @@ int main() {
     end=clock();
 
     timecomplexity=((double)(end-start))/CLOCKS_PER_SEC;
-    cout<<timecomplexity<<endl;   
+    cout<<"Time complexity: "<<timecomplexity<<endl;   
     return 0;
 }
