@@ -1,42 +1,34 @@
-#include <iostream>
-#include <vector>
+#include "graph.h"
 
-class Graph {
-private:
-    int numVertices;
-    std::vector<std::vector<int>> adjMatrix;
+Graph::Graph(int numVertices) : numVertices(numVertices) {
+    adjMatrix.resize(numVertices, std::vector<int>(numVertices, 0));
+}
 
-public:
-    Graph(int numVertices) : numVertices(numVertices) {
-        adjMatrix.resize(numVertices, std::vector<int>(numVertices, 0));
-    }
+bool Graph::isEmpty() {
+    return numVertices == 0;
+}
 
-    bool isEmpty() {
-        return numVertices == 0;
-    }
-
-    bool isDirected() {
-        for (int i = 0; i < numVertices; ++i) {
-            for (int j = 0; j < numVertices; ++j) {
-                if (adjMatrix[i][j] != adjMatrix[j][i]) {
-                    return true;
-                }
+bool Graph::isDirected() {
+    for (int i = 0; i < numVertices; ++i) {
+        for (int j = 0; j < numVertices; ++j) {
+            if (adjMatrix[i][j] != adjMatrix[j][i]) {
+                return true;
             }
         }
-        return false;
     }
+    return false;
+}
 
-    void addEdge(int u, int v) {
-        adjMatrix[u][v] = 1;
-        adjMatrix[v][u] = 1;
-    }
+void Graph::addEdge(int u, int v) {
+    adjMatrix[u][v] = 1;
+    adjMatrix[v][u] = 1;
+}
 
-    void printAdjMatrix() {
-        for (int i = 0; i < numVertices; ++i) {
-            for (int j = 0; j < numVertices; ++j) {
-                std::cout << adjMatrix[i][j] << " ";
-            }
-            std::cout << "\n";
+void Graph::printAdjMatrix() {
+    for (int i = 0; i < numVertices; ++i) {
+        for (int j = 0; j < numVertices; ++j) {
+            std::cout << adjMatrix[i][j] << " ";
         }
+        std::cout << "\n";
     }
-};
+}
