@@ -1,6 +1,7 @@
+
 #include<iostream>
 class Graph{
     private:
-        bool directi
+        bool direction 
 
 }
